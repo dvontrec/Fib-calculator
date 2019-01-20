@@ -47,7 +47,7 @@ app.get('/values/all', async (req, res) => {
   res.send(values.rows);
 });
 
-app.get('values/current', async (req, res) => {
+app.get('/values/current', async (req, res) => {
   redisClient.hgetall('values', (err, values) => {
     res.send(values);
   });
@@ -55,6 +55,7 @@ app.get('values/current', async (req, res) => {
 
 app.post('/values', async (req, res) => {
   const index = req.body.index;
+  console.log(index);
   if (parseInt(index) > 40) {
     return res.status(422).send('Index too high');
   }
