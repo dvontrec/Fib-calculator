@@ -10,10 +10,10 @@ script:
 
 # builds each container from production dockerfiles
 after_success:
-  - docker build -t dvontrec/multi-client -f ./client
-  - docker build -t dvontrec/multi-nginx -f ./nginx
-  - docker build -t dvontrec/multi-server -f ./server
-  - docker build -t dvontrec/multi-worker -f ./worker
+  - docker build -t dvontrec/multi-client ./client
+  - docker build -t dvontrec/multi-nginx ./nginx
+  - docker build -t dvontrec/multi-server ./server
+  - docker build -t dvontrec/multi-worker ./worker
   #  log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #  Takes images and push to docker hub
