@@ -15,7 +15,7 @@ after_success:
   - docker build -t dvontrec/multi-server -f ./server
   - docker build -t dvontrec/multi-worker -f ./worker
   #  log in to docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #  Takes images and push to docker hub
   - docker push dvontrec/multi-client
   - docker push dvontrec/multi-nginx
