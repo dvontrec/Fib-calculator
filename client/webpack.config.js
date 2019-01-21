@@ -29,13 +29,13 @@ const config = {
     // name of the file with a hash for cache
     filename: '[name].[chunkhash].js'
   },
-  watch: true,
   // Adds dev server config
   devServer: {
     contentBase: path.join(__dirname, '../build/'),
     host: '0.0.0.0',
     disableHostCheck: true,
     open: true,
+    // needs to be set to the address that will be used when contaoners are combined
     public: '0.0.0.0:8081',
     port: 8080
   },
